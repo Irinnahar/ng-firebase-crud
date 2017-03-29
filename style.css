@@ -1,0 +1,62 @@
+md-whiteframe.md-whiteframe-5dp.layout-align-center-center.layout-column{
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+}
+
+div#userform {
+    width: 100%;
+}
+h3 {
+    background: #704B74;
+    color: beige;
+    margin: 0;
+    line-height: 40px;
+    padding: 10px 20px;
+}
+#userInput {
+    padding: 20px;
+}
+button.md-raised.md-primary.md-button.md-ink-ripple {
+    background: #704b74;
+    margin-left: 35%;
+    padding: 3px 33px;
+}
+button.md-raised.md-primary.md-button.md-ink-ripple:hover{
+
+    background-color: #4f2354;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td.ng-binding {
+    font-size: 12px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    color: beige;
+    background: #6E4A70;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+div#datatable {
+    width: 100%;
+    padding: 20px;
+}
+a {
+    background: #6e4a70;
+    color: beige;
+    text-decoration: none;
+    padding: 6px;
+    margin: 5px;
+    border-radius: 3px;
+}

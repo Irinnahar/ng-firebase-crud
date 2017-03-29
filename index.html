@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+	<title>User Infromation</title>
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+
+	<!-- Angular Material Library -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+	<!-- firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	 <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body ng-controller="userCtrl">
+	<div class="userinfo">
+		<!-- create a user form here to take input -->
+		<md-whiteframe class="md-whiteframe-5dp"  layout-align=" center center" layout="column">
+			<div id="userform">
+				<div class="createInfo" >
+					<h3 ng-if="createadd">Enter Student Infromation</h3>
+					<h3 ng-if="showsave">Update Student Infromation</h3>
+					<div id="userInput">
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Name</label>
+							<input ng-model="stdname">
+						</md-input-container>
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Age</label>
+							<input ng-model="stdage">
+						</md-input-container>
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Group</label>
+							<input ng-model="stdgroup">
+						</md-input-container>
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>City</label>
+							<input ng-model="stdcity">
+						</md-input-container>
+						<md-button class="md-raised md-primary" ng-click="add()" ng-if="createadd">Add Student</md-button>
+						<md-button class="md-raised md-primary" ng-click="save()" ng-if="showsave">Save</md-button>
+					</div>	
+				</div>
+				
+			</div>
+			<div id="datatable" >
+				<table>
+				  <tr>
+				  	<th>No</th>
+				    <th>Name</th>
+				    <th>Age</th>
+				    <th>Group</th>
+				    <th>City</th>
+				    <th>Edit/Delete</th>
+				  </tr>
+				  <tr ng-repeat = "(key,student) in students">
+				  	<td>{{$index}}</td>
+				    <td>{{student.name}}</td>
+				    <td>{{student.age}}</td>
+				    <td>{{student.group}}</td>
+				    <td>{{student.city}}</td>
+				    <td>
+				    	<a  ng-click="edit(key, student)" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+				    	<a href="#" ng-click="delete(key)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+				    </td>
+				  </tr>				  
+				</table>
+			</div>
+
+		</md-whiteframe>
+	</div>
+</body>
+</html>
